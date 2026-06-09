@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Buses</title>
+</head>    
+<body>
+    <h1>Available Buses</h1>
+    <table border="1" cellpadding="10">
+        <tr>
+             <th>Bus Number</th>
+             <th>Bus Name</th>
+             <th>Source</th>
+             <th>Destination</th>
+             <th>Seats</th>
+        </tr>
+        {% for bus in buses %}
+        <tr>
+            <td>{{bus[1]}}</td>
+            <td>{{bus[2]}}</td>
+            <td>{{bus[3]}}</td>
+            <td>{{bus[4]}}</td>
+            <td>{{bus[5]}}</td>
+            <td>
+                <a href="/book_bus/{{bus[1]}}">Book Seat</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -6,6 +6,6 @@ mydb = mysql.connector.connect(
     password="root28",
     database="bus_booking_bd"
 )
-cursor = mydb.cursor()
+cursor = mydb.cursor(buffered=True)
 
 print("Database connected successfully")

@@ -3,15 +3,16 @@
 <head>
     <title>View Buses</title>
 </head>    
-<body>
+<body style="background-color: bisque;">
     <h1>Available Buses</h1>
-    <table border="1" cellpadding="10" >
+    <table  style="background-color: rgb(246, 207, 156);color: black;" border="1" cellpadding="10">
         <tr>
              <th>Bus Number</th>
              <th>Bus Name</th>
              <th>Source</th>
              <th>Destination</th>
-             <th>Seats</th>
+             <th>Total Seat</th>
+             <th>Available Seats</th>
         </tr>
         {% for bus in buses %}
         <tr>
@@ -20,6 +21,8 @@
             <td>{{bus[3]}}</td>
             <td>{{bus[4]}}</td>
             <td>{{bus[5]}}</td>
+            <td>{{bus[6]}}</td>
+            
         </tr>
         {% endfor %}
     </table> 

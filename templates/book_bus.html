@@ -3,10 +3,31 @@
 <head>
     <title>Book Bus </title>
 </head>
-<body>
-    <h1>Bus Booking</h1>
+<body style="background-color: rgb(246, 198, 135);">
+    <h1 align="center" style="color: aliceblue;">Bus Booking</h1>
+    <style>
 
-        <form  method="POST">
+   
+    body{
+        background-image: url("{{ url_for('static',filename='images/bus4.jpg') }}");
+        background-size: cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+        height:140vh;
+        margin: 0;
+        }  
+
+
+    .booking-form{
+        width:300px;
+        margin:30px auto;
+        padding:20px;
+        border-radius:10px;
+        background-color:rgb(248, 241, 213);
+    }
+    </style>
+
+        <form class="booking-form" method="POST">
 
             <label>Username </label>
             <br>
@@ -18,12 +39,45 @@
             <input type="text" name="bus_number" value="{{bus_number}}" readonly >
             <br><br>
 
-            <label>Seate Number</label>   
+            <label>Available Seats</label>
+            <br>
+            <input type="text" name="available_seats" value="{{available_seats}}" readonly>
+            <br><br>
+
+
+            
+            <label>Available Seat Numbers</label>
+            <br><br>
+            <table style="background-color: rgb(235, 235, 235);" border="" cellpadding="5">
+                {% for available_seat in range(1, available_seats + 1) %}
+                    {% if loop.index0 % 5 == 0 %}
+                    <tr>
+                    {% endif %}
+                        <td align="center"
+                        {% if available_seat in available_seat_numbers %} 
+                                style="background-color: rgb(167, 219, 193); color: rgb(10, 10, 10);"
+                            {% else %}
+                                style="background-color: rgb(223, 174, 165); color: rgb(18, 17, 17);"                                                            
+                            {% endif %}  >
+                            {% if available_seat in available_seat_numbers %} 
+                                {{available_seat}}
+                            {% else %}
+                                                            
+                            {% endif %}
+                        </td>
+                    {% if loop.index0 % 5 == 4 or loop.last %}
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+            <br><br>  
+
+            <label>Seat Number</label>   
             <br>
             <input type="text"  name="seat_number">
             <br><br>
 
-            <button type="submit">Book Seat</button>
+            <button  style="background-color: rgb(2, 67, 2);color: aliceblue;" type="submit">Book Seat</button>
 
         </form>
             

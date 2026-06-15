@@ -2,18 +2,37 @@
 <html>
 <head>
     <title>Admin Dashboard</title>
-</head>    
+</head>  
+<style>
+    body{
+        background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
+        background-size: cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+        height:100vh;
+        margin: 0;
+        }
+</style>  
 <body>
-    <h1>Dashboard</h1>
-
-    <a href="/add_bus">Add Bus</a>
+    <h1 align="center">Dashboard</h1>
     <br><br>
 
-    <a href="/admin_view_buses">View Buses</a>
+    <a href="/add_bus">
+        <button  style="background-color: rgb(255, 65, 2); color: rgb(19, 19, 21);" type="button" >Add Bus</button>
+    </a>
     <br><br>
 
-    <a href="/view_bookings">View Booking</a>
+    <a href="/admin_view_buses">
+        <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="button" >View Buses</button>
+    </a>
     <br><br>
+
+    <a href="/view_bookings">
+        <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="View Bookings" >Register</button>
+    </a>
+    <br><br>
+
+    <a href="/">Logout</a>
 
 </body>
 </html>

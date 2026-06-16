@@ -13,9 +13,19 @@
         background-size: cover;
         background-repeat:no-repeat ;
         background-position: center;
-        height:140vh;
+        height:100%;
         margin: 0;
         }  
+
+    .booking-form{
+        background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
+        background-size: cover;
+        background-repeat:no-repeat ;
+        background-position: center;
+        height:100%;
+        margin: 0;
+        color: white;
+        }
 
 
     .booking-form{
@@ -31,7 +41,7 @@
 
             <label>Username </label>
             <br>
-            <input type="text" name="username">
+            <input type="text" name="username" required>
             <br><br>
 
             <label>Bus Number </label>
@@ -74,10 +84,10 @@
 
             <label>Seat Number</label>   
             <br>
-            <input type="text"  name="seat_number">
+            <input type="text"  name="seat_number" required>
             <br><br>
 
-            <button  style="background-color: rgb(2, 67, 2);color: aliceblue;" type="submit">Book Seat</button>
+            <button  style="background-color: rgb(95, 135, 95);color: aliceblue;" type="submit">Book Seat</button>
 
         </form>
             

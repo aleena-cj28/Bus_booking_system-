@@ -148,8 +148,11 @@ def book_bus(bus_number):
         userame = request.form["username"]
         seat_number = int(request.form["seat_number"])
 
+        if  seat_number > bus[0]:
+            return "Invalid seat number.Please select a seat between 1 t0 {}".format(bus[0])
+
         if seat_number in booked_seat_list:
-            return "This Seat is already booked"
+            return "This Seat is already booked.Please choose another seat"
 
 
         insert_sql = """ INSERT INTO booking(username,bus_number,seat_number) VALUES(%s, %s, %s) """

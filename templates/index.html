@@ -2,35 +2,79 @@
 <html>
 <head>
     <title>BUS BOOKING SYSTEM</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"  >
+    <style>
+       body{
+        margin: 0px;
+       }
+        
+        .outer-box{
+            width: 100%;
+            height: 600px;
+            background: rgb(255, 255, 255);
+            
+        }
+
+        .form{
+            width: 50%;
+            height: 600px;
+            justify-content: center;
+            background-color: rgb(152, 149, 149);
+            margin: 0px;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+           }
+
+        .form button{
+            width:200px;
+            height: 45px;
+            border-radius: 15px;
+            font-size: 25px;  
+            
+        }
+
+       
+        .pic{
+            background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
+            background-position: 63% center;
+            width: 50%;
+            height: 600px;
+            margin:0px;  
+            float: left;     
+            }
+    </style>
 </head>  
 
-<style>
-    body{
-        background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
-        background-size: cover;
-        background-repeat:no-repeat ;
-        background-position: center;
-        height:100vh;
-        margin: 0;
-        }
-</style>
+
 
 <body>
-    <h1 align="center" style="color: rgb(241, 34, 7);font-size: 3.3rem;">BookBus </h1>
-    <h2 align="center" style="color: rgb(0, 0, 0);">Where do you want to go Today? </h2>
+    <div class="outer-box">
+         
+        <div class="form">
 
-    <br><br>
-    
-    <a href="/register">
-        <div style="height: 10px;">
-            <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="button" >Register</button>
+            <h1></h1>
+
+            <div>
+                <a href="/register">
+                    <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="button" >Register</button>
+                </a> 
+
+                <a href="/login">
+                    <button style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="submit">Login</button>
+                </a>
+            </div>
         </div>
-    </a> 
-    <br><br>
+
+        <div class="pic">
+            
+            <h1 align="center" style="color: rgb(241, 34, 7);font-size: 3.3rem;">BookBus </h1>
+            <h2 align="center" style="color: rgb(244, 222, 222);">Where do you want to go Today? </h2>
+
+        </div>
+    </div>
     
-    <a href="/login">
-        <button style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="submit">Login</button>
-    </a>
     <br><br>
 
 

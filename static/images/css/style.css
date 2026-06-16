@@ -1,0 +1,16 @@
+    body{
+        background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
+        margin-left:50px;
+                
+        }
+
+     .form{
+            border:3px solid ;
+            width: 500px;
+            height: 300px;
+            background: rgb(206, 70, 70);
+            border-color: black;
+            margin: 0px;
+            padding-left: 20px;
+            padding-top: 20px;
+           }

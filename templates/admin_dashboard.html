@@ -5,34 +5,55 @@
 </head>  
 <style>
     body{
-        background-image: url("{{ url_for('static',filename='images/bus.jpg') }}");
+        background-image: url("{{ url_for('static',filename='images/bus3.jpg') }}");
         background-size: cover;
         background-repeat:no-repeat ;
         background-position: center;
         height:100vh;
         margin: 0;
         }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+    }
+
+    .button button{
+        width:120px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+    }
+
+    .button div{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
 </style>  
 <body>
     <h1 align="center">Dashboard</h1>
     <br><br>
+    <div class="button">
+        <div>
+            <a href="/add_bus">
+                <button  style="background-color: rgb(245, 97, 12); color: rgb(20, 19, 18);" type="button" >Add Bus</button>
+            </a>
+       
+            <a href="/admin_view_buses">
+                <button  style="background-color: rgb(245, 97, 12); color: rgb(19, 19, 21);" type="button" >View Buses</button>
+            </a>
+      
+            <a href="/view_bookings">
+                <button  style="background-color: rgb(245, 97, 12); color: rgb(19, 19, 21);" type="button" >View Booking</button>
+            </a>
 
-    <a href="/add_bus">
-        <button  style="background-color: rgb(255, 65, 2); color: rgb(19, 19, 21);" type="button" >Add Bus</button>
-    </a>
-    <br><br>
-
-    <a href="/admin_view_buses">
-        <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="button" >View Buses</button>
-    </a>
-    <br><br>
-
-    <a href="/view_bookings">
-        <button  style="background-color: rgb(215, 64, 14); color: rgb(19, 19, 21);" type="View Bookings" >Register</button>
-    </a>
-    <br><br>
-
-    <a href="/">Logout</a>
-
+            <a href="/">Logout</a>
+        </div>
+        <br><br>
+    </div>
 </body>
 </html>

@@ -2,9 +2,37 @@
 <html>
 <head>
     <title>View Buses</title>
+    <style>
+        .bus-card{
+            background-color: rgb(235, 152, 84);
+            border-radius:20px;
+            margin: 10px;
+            width: 250px;
+            height: 265px;
+            float: left;
+            box-shadow: 0 4px 5px;
+            cursor: pointer;
+          
+        }
+    </style>
 </head>    
-<body style="background-color: bisque;">
-    <h1>Available Buses</h1>
+<body style="background-color: rgb(255, 255, 255);" align="center">
+    <h1 align="center">Available Buses</h1>
+
+    <div class="bus-container">
+        {% for bus in buses%}
+        <div class="bus-card">
+            <h3>{{bus[2]}}</h3>
+            <p><strong>Bus Number : </strong>{{bus[1]}}</p>
+            <p><strong>Source : </strong>{{bus[3]}}</p>
+            <p><strong>Destination : </strong>{{bus[4]}}</p>
+            <p><strong>Total Seats : </strong>{{bus[5]}}</p>
+            <p><strong>Available Seats : </strong>{{bus[6]}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br>
+
     <table  style="background-color: rgb(246, 207, 156);color: black;" border="1" cellpadding="10">
         <tr>
              <th>Bus Number</th>

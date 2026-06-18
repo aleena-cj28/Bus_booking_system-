@@ -2,14 +2,80 @@
 <html>
 <head>
     <title>View Buses</title>
+    <style>
+        .bus-card{
+            background-color: rgb(148, 239, 208);
+            border-radius:20px;
+            margin: 10px;
+            width: 250px;
+            height: 265px;
+            float: left;
+            box-shadow: 0 4px 5px;
+            cursor: pointer;
+            
+        }
+        .navbar{
+            background: rgb(131, 135, 139);
+        
+        }
+        .nav-head{
+            
+            width: 80%;
+            float: left;
+            
+           
+        }
+        .logout{
+           
+            width:20%;
+            float: left;
+            margin-top: 35px;
+        }
+
+        #logout-button{
+            padding: 5px 10px;
+            border-radius: 50px;
+            display: inline-flex;
+
+        }
+    </style>
 </head> 
    
-<body style="background-color: rgb(169, 240, 216);" align="center">
-    <h1 style="color: rgb(6, 97, 20);">Available Buses</h1>
+<body style="background-color: rgb(255, 255, 255);" align="center">
 
-    <a href="/">
-        <button style="float: right;">Logout</button>
-    </a>
+    <nav class="navbar">
+        <div class="nav-head"> 
+            <h1 style="color: rgb(6, 97, 20);">Available Buses</h1>
+
+        </div>
+
+        <div class="logout">
+
+            <a href="/">
+                <button  id="logout-button" style="background-color: rgb(135, 234, 201);">Logout </button>
+            </a> 
+
+        </div>
+    </nav>
+    
+
+    <br><br>
+
+    <div class="bus-container">
+        {% for bus in buses%}
+        <div class="bus-card">
+            <h3>{{bus[2]}}</h3>
+            <p><strong>Bus Number : </strong>{{bus[1]}}</p>
+            <p><strong>Source : </strong>{{bus[3]}}</p>
+            <p><strong>Destination : </strong>{{bus[4]}}</p>
+            <p><strong>Total Seats : </strong>{{bus[5]}}</p>
+            <p><strong>Available Seats : </strong>{{bus[6]}}</p>
+            <a style="color: aliceblue;"  href="/book_bus/{{bus[1]}}"><button style="background-color: rgb(63, 121, 4);color: #fff;">Book Seat</button></a>
+
+        </div>
+        {% endfor %}
+    </div>
+    <br><br>
     <table style="background-color: rgb(191, 231, 191);" border="1" cellpadding="10" align="center">
         <tr>
              <th>Bus Number</th>

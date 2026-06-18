@@ -1,7 +1,8 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,session
 from database import mydb,cursor
 
 app = Flask(__name__)
+app.secret_key = "bus_booking_secret"
 
 
 
@@ -33,6 +34,8 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
+
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -47,6 +50,7 @@ def login():
         
 
         if user:
+            
             return redirect("/view_buses")
         elif  username == "admin" and password == "admin222":
             return redirect("/admin_dashboard")
@@ -108,7 +112,7 @@ def add_bus():
 @app.route("/view_buses")
 def view_buses():
 
-    
+
 
     sql= "SELECT * FROM buses"
     cursor.execute(sql)

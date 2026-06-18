@@ -2,38 +2,58 @@
 <html>
 <head>
     <title>Add Bus</title>
+    <style>
+         .form{
+            margin-left: 250px;
+            margin-right: 250px;
+            border-radius: 15px;
+            background-color: antiquewhite;
+            box-shadow: 1px 1px 1px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            height: 450px;
+
+    }
+
+    </style>
+   
 </head> 
 
 <body style="background-color: bisque;">
-    <h1 >Add Bus</h1>
-    <form  action="/add_bus" method="POST">
-        <label>Bus Number</label>
-        <br>
-        <input type="text" name="bus_number" required>
-        <br><br>
+    <h1 align="center">Add Bus</h1>
+    <div>
+        <div class="form">
+            <form  action="/add_bus" method="POST">
+                <label>Bus Number</label>
+                <br>
+                <input type="text" name="bus_number" required>
+                <br><br>
 
-        <label>Bus Name</label>
-        <br>
-        <input type="text" name="bus_name" required>
-        <br><br>
+                <label>Bus Name</label>
+                <br>
+                <input type="text" name="bus_name" required>
+                <br><br>
 
-        <label>Source</label>
-        <br>
-        <input type="text" name="source" required>
-        <br><br>
+                <label>Source</label>
+                <br>
+                <input type="text" name="source" required>
+                <br><br>
 
-        <label>Destination</label>
-        <br>
-        <input type="text" name="destination" required>
-        <br><br>
+                <label>Destination</label>
+                <br>
+                <input type="text" name="destination" required>
+                <br><br>
         
-        <label>Total Seats</label>
-        <br>
-        <input type="number" name="seats" max="60" required>
-        <br><br>
+                <label>Total Seats</label>
+                <br>
+                <input type="number" name="seats" max="60" required>
+                <br><br>
 
-        <button style="background-color: aquamarine;" type="submit"> Add Bus </button>
+                <button style="background-color: aquamarine;" type="submit"> Add Bus </button>
 
-    </form>
+            </form>
+        </div>
+    </div>
 </body>   
 </html>

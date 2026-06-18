@@ -2,22 +2,42 @@
 <html>
 <head>
     <title>Login</title>
+    <style>
+        .login{
+            background: rgb(200, 198, 198);
+            box-shadow: 2px 4px 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 250px;
+            margin-right: 250px;  
+            height: 250px;
+            border-radius: 10px;
+        }
+         
+    </style>
 </head>    
 <body style="background-color:#a19f9f ;">
-    <h1  style="color: #080702;">Login</h1>
+    <h1 align="center" style="color: #080702;">Login</h1>
 
-    <form action="/login" method="POST">
-        <label>Username</label>
-        <br>
-        <input type="text" name="username" required>
-        <br><br>
+   
+        <div>
+            <div class="login">
+                <form action="/login" method="POST">
+                    <label>Username</label>
+                    <br>
+                    <input type="text" name="username" required>
+                    <br><br><br>
 
-        <label>Password</label>
-        <br>
-        <input type="password" name="password"required>
-        <br><br>
+                    <label>Password</label>
+                     <br>
+                     <input type="password" name="password"required>
+                    <br><br><br>
 
-        <button  style="background-color: rgb(69, 186, 69);color: azure;" type="submit">Login</button>
-    </form>
+                    <button style="background-color: rgb(69, 186, 69);color: azure;" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    
 </body>
 </html>

@@ -51,7 +51,7 @@
 
         <div class="logout">
 
-            <a href="/">
+            <a href="/logout">
                 <button  id="logout-button" style="background-color: rgb(135, 234, 201);">Logout </button>
             </a> 
 
@@ -70,34 +70,11 @@
             <p><strong>Destination : </strong>{{bus[4]}}</p>
             <p><strong>Total Seats : </strong>{{bus[5]}}</p>
             <p><strong>Available Seats : </strong>{{bus[6]}}</p>
-            <a style="color: aliceblue;"  href="/book_bus/{{bus[1]}}"><button style="background-color: rgb(63, 121, 4);color: #fff;">Book Seat</button></a>
-
+            <a style="color: aliceblue;"  href="/book_bus/{{bus[1]}}"><button style="background-color: rgb(63, 121, 4);color: #fff;">Book Seat</button></a> 
         </div>
         {% endfor %}
     </div>
     <br><br>
-    <table style="background-color: rgb(191, 231, 191);" border="1" cellpadding="10" align="center">
-        <tr>
-             <th>Bus Number</th>
-             <th>Bus Name</th>
-             <th>Source</th>
-             <th>Destination</th>
-             <th>Total Seats</th>
-             <th>Available Seats</th>
-        </tr>
-        {% for bus in buses %}
-        <tr>
-            <td>{{bus[1]}}</td>
-            <td>{{bus[2]}}</td>
-            <td>{{bus[3]}}</td>
-            <td>{{bus[4]}}</td>
-            <td>{{bus[5]}}</td>
-            <td >{{bus[6]}}</td>
-            <td style="background-color: rgb(63, 121, 4);">
-                <a style="color: aliceblue;"  href="/book_bus/{{bus[1]}}">Book Seat</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+  
 </body>
 </html>

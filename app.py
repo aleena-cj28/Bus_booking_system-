@@ -35,13 +35,16 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
+    if "username" in session:
+        return redirect("/view_buses")
+    
 
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
 
         sql=""" SELECT * FROM users WHERE username=%s AND password=%s """
-
+ 
         values = (username,password)
         cursor.execute(sql, values)
         user = cursor.fetchone()
@@ -50,9 +53,10 @@ def login():
         
 
         if user:
-            
+            session ["username"] = username
             return redirect("/view_buses")
         elif  username == "admin" and password == "admin222":
+            session ["admin"] = username
             return redirect("/admin_dashboard")
         else:
             return "Invalid Username or Password"
@@ -136,7 +140,9 @@ def book_bus(bus_number):
     select_sql="SELECT seat_number FROM booking WHERE bus_number=%s"
     cursor.execute(select_sql,(bus_number,))
     booked_seat= cursor.fetchall()
-     
+
+
+         
 
     booked_seat_list=[int(seat_number[0]) for seat_number in booked_seat ]
 
@@ -174,7 +180,7 @@ def book_bus(bus_number):
             
     return render_template("book_bus.html", bus_number=bus_number,available_seats=available_seats,available_seat_numbers=available_seat_numbers)
 
-
+  
 @app.route("/admin_dashboard")
 def dashboard():
     return render_template("admin_dashboard.html")
@@ -202,6 +208,11 @@ def view_bookings():
     booking = cursor.fetchall()
 
     return render_template("view_booking.html", bookings=booking)
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/login")
 
 
 
